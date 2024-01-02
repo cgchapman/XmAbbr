@@ -1,0 +1,24 @@
+XmAbbr – Notes
+
+Markup representation:
+
+Basic tag format is identifier (label) followed by “:” (no whitespace) followed by data content with no end tag. Indentation used for cosmetic presentation. Attributes and Elements have same format – except attributes preceded by “$” character - “$” character also used as namespace prefix separator instead of “:”
+
+Down one level shown by “-” in front of label while number of levels up shown by “+” repeated for number of levels. Attributes are always at same level as owning element and follow element data while text between sub elements indicated by “$:” label.
+
+The normal format of data is tokenised text which can have any amount of whitespace (space,tab,CR,LF) – on import leading and trailing whitespace is removed and any whitespace within the text replaced by a single space. The data can include the “:” character which can be escaped by repeating this (ie: “::” is used to represent a single “:”). 
+
+Data which does not match this tokenised format is enclosed in either single or double quotes. Within a quoted string the enclosing quote character is escaped by being repeated. Quoted strings maybe used within tokenised data to include untokenised text. Multiple quoted strings may be used within a data section – with any amount of whitespace between these which is not imported (eg: the data is only what is in the quoted strings
+
+Label formats are:
+
+elementName:    DATA -  plain element without namespace prefix
+nsPrefix$elementName: DATA  - element with namespace prefix
+$attributeName:    DATA -  attribute without namespace prefix
+$nsPrefix$attributeName: DATA  - attribute with namespace prefix
+$: DATA – inter element text
+
+Structure representation:
+
+-[nsPrefix$]?elementName: DATA – new element within the previous element
++[+]*[nsPrefix$]?elementName: DATA – element at a higher level of nesting 
