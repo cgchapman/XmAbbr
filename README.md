@@ -13,3 +13,5 @@ At the moment mostly a learning exercise - Main stages are to:
 
 1.  Fully represent all XML features - including namespaces etc
 2.  As far as possible allow JavaScript data types to be represented and preserved
+
+	: 	: 	: 	: 	: 	: 	: 	: 	: 	: 	:
