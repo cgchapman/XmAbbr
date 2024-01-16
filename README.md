@@ -35,7 +35,7 @@ ${\color{blue}peopleList:}$  <br>
 *(Markup tags are shown in blue and data in red)* <br>
 Conversion to XML
 
-${\color{blue}\<peopleList}$  <br>
+${\color{blue}peopleList}$  <br>
           ${\color{blue}\>\<name}$  <br>
                     ${\color{blue}\>\<title\> \color{red}Mr \color{blue}\</title\>\<firstName> \color{red}John \color{blue} \></firstName}$ <br>                                                                                                                  
         
