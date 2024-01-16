@@ -30,8 +30,8 @@ PeopleList:
         -name: -title:  Mr     first: John     middle: Albert    last: Doe  suffix: JNR     gender: Male
         +name: -title: Ms     first: Edith    middle: Jane Louise    last: Pargetter       gender: Female
 
-<details>
-<summary>### 2.1 Summary of markup notation </summary>
+### <details>
+<summary>2.1 Summary of markup notation </summary>
 
 Before processing any XmAbbr input data is normalised to Unicode NFC (Normalisation Form Canonical Composition). This is however applied before any numeric character references are decoded. Any space or non-printable character is treated as a word or token delimiter
 
@@ -62,20 +62,20 @@ Nmtokens ::= Nmtoken ( #x20 Nmtoken )*
 </details>
 
 </details>
-<details>
-<summary>### 2.1 Rules for property names and detailed markup tag format </summary>
+### <details>
+<summary>2.1 Rules for property names and detailed markup tag format </summary>
 
 Insert text here
 
 </details>
 <details>
-<summary>### 2.3 Extended markup tag control symbols definition and usage </summary>
+### <summary> 2.3 Extended markup tag control symbols definition and usage </summary>
 
 Insert text here
 
 </details>
 <details>
-<summary>### 2.4 Text formats and options </summary>
+### <summary>2.4 Text formats and options </summary>
 
 Insert text here
 
