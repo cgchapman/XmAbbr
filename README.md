@@ -32,12 +32,12 @@ ${\color{blue}peopleList:}$  <br>
           ${\color{blue}+name:}$  <br>
                     ${\color{blue}-title: \space \color{red}Ms \space \space \space \space \color{blue}firstName: \space \color{red}Edith \space \space \space \space \space \color{blue}middleName: \space \color{red}Jane Lousie \space \space \space  \space \color{blue}lastName: \space \color{red}Pargetter \space \space \space \space \space \color{blue}gender: \space \color{red}Female}$  <br>
 <br>
-*(Markup tags are shown in blue and data in red)*
+*(Markup tags are shown in blue and data in red)* <br>
 Conversion to XML
 
-$`{\color{blue}<peopleList}`$  <br>
-          $`{\color{blue}><name}`$  <br>
-                    $`{\color{blue}><title> \color{red}Mr \color{blue}</title><firstName> \color{red}John \color{blue} </firstName}`$ <br>                                                                                                                  
+${\color{blue}&lt;peopleList}$  <br>
+          ${\color{blue}&gt;&lt;name}$  <br>
+                    ${\color{blue}&gt;&lt;title&gt; \color{red}Mr \color{blue}&lt;/title&gt;&lt;firstName> \color{red}John \color{blue} &lt;/firstName}$ <br>                                                                                                                  
         
 ### 1.1 Summary of markup notation 
 <details>
