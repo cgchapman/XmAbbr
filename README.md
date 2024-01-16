@@ -27,10 +27,10 @@ The two types of content in XmAbbr (as with XML) are mark up and data. Mark up i
 The basic form of a markup tag is one or more optional control characters followed by a property name (optional). The essential control symbols used are “-” to indicate down one level and “+” (one or more) to indicate up one or more levels. The following example is of data for an element called peopleList containing elements called name which in turn contains elements named title, first, middle, last, suffix and gender.
 
 ${\color{blue}peopleList:}$  <br>
-$(\space          \color{blue}-name:}$  <br>
-${\space                 \color{blue}title: \space \color{red}Mr \space \color{blue}first: \space \color{red}John \space \color{blue}middle: \space \color{blue}Albert \space \color{blue}last: \space \color{red}Doe \space \color{blue}gender: \space \color{red}Male}$  <br>
+$(\color{blue}          \space -name:}$  <br>
+${\color{blue}                 title: \space \color{red}Mr \space \color{blue}first: \space \color{red}John \space \color{blue}middle: \space \color{blue}Albert \space \color{blue}last: \space \color{red}Doe \space color{blue}gender: \space \color{red}Male}$  <br>
 
-<BR>
+<br>
         
         +name: -title: Ms     first: Edith    middle: Jane Louise    last: Pargetter       gender: Female
 
