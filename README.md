@@ -36,7 +36,7 @@ ${\color{blue}peopleList:}$  <br>
 Conversion to XML
 
 ${\color{blue}peopleList}$  <br>
-          ${\color{blue}><name}$  <br>
+          ${\color{blue}{'\u003E'}{'\u003C'}name}$  <br>
                     ${\color{blue}\>\<title\> \color{red}Mr \color{blue}\</title\>\<firstName> \color{red}John \color{blue} \></firstName}$ <br>                                                                                                                  
         
 ### 1.1 Summary of markup notation 
