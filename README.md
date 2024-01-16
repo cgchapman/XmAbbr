@@ -35,9 +35,9 @@ ${\color{blue}peopleList:}$  <br>
 *(Markup tags are shown in blue and data in red)* <br>
 Conversion to XML
 
-${\color{blue}peopleList}$  <br>
-          ${\color{blue}{\u003E}{\u003C}name}$  <br>
-                    ${\color{blue}\>\<title\> \color{red}Mr \color{blue}\</title\>\<firstName> \color{red}John \color{blue} \></firstName}$ <br>                                                                                                                  
+${\color{blue}ᐸpeopleList}$  <br>
+          ${\color{blue}ᐳᐸname}$  <br>
+                    ${\color{blue}ᐳᐸtitleᐳ \color{red}Mr \color{blue}ᐸ/titleᐳᐸfirstNameᐳ \color{red}John \color{blue} ᐸ/firstName}$ <br>                                                                                                                  
         
 ### 1.1 Summary of markup notation 
 <details>
