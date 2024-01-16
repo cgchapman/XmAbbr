@@ -1,17 +1,85 @@
-# **XmAbbr**
-A lightweight abbreviated alternative serialisation format for XML structured data
+# **XmAbbr (XML Abbreviated)**
 
-An abbreviated format for XML structured data. The aim is for this to be lightweight and more human readable than XML. Plus to include support for direct export and import of JavaScript data objects - both to and from full XML and XmAbbr
+## 1. Introduction
 
-At the moment mostly a learning exercise - Main stages are to:
+XmAbbr is a lightweight abbreviated alternative serialisation language for XML (version 1.1) formatted data and can represent any standalone XML file. In addition the language specifies a computer language independent XML representation of structured typed data together with a series of mapping conventions for use with specific computer languages and applications.
 
-1. Develop a  specification for the alternate XML syntax
-2. Devise methodology and rules to allow mapping between XML structures and JavaScript objects
-3. Develop import and export routines 
+XmAbbr is intended to be easier to read and edit (without needing special tools) than XML plus also facilitating standardised methods for representing structured data for direct import and export from a broad range of applications and computer languages. Anticipated uses range from messaging between applications to configuration files and simplified export or import of XML files.
 
-### Key Goals:
+Conversion to and from between XML and XmAbbr formatted data results in no semantic loss of information. In addition XmAbbr serves as an object notation – for example a round trip conversion between JSON formatted data and XmAbbr (ie: from JSON to XmAbbr and back again) also results in no loss of semantic information.
 
-1.  Fully represent all XML features - including namespaces etc
-2.  As far as possible allow JavaScript data types to be represented and preserved
+The XmAbbr format has a strong visual resemblance to YAML and is intended to be presented in an indented style though (as with XML) it does not use indentation as a markup element. Where used to convey data type information a form of “Duck Typing” (inferred data type) is employed. For XmAbbr data programmatically generated this is designed to be unambiguous and the rules for avoiding confusion between text and typed data in the case of manual editing are simple and clear.
 
-	: 	: 	: 	: 	: 	: 	: 	: 	: 	: 	:
+This document is not a specification but where used the capitalised words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and       "OPTIONAL" have the meanings as described in RFC 2119. Where definitions of grammar are given these use an Extended Backus-Naur Form (EBNF) notation.
+
+XmAbbr has three distinct constituent parts:
+
+1. An alternate markup language for representing XML data which fully covers all features of XML except for external DTDs (Document Type Definitions) and Schemas which alter the XML content (All XML files generated from XmAbbr content have the XML declaration attribute standalone = "yes"). One aim of the language (as far as possible) is for most people to be able to infer from an example what the basic structure and meaning of this is.
+
+2. A definition of how high level data constructs (such as objects, arrays and data types) are represented and interpreted within XML structured data. So, while XmAbbr can be used for any XML data, in the case of structured data a subset of XML is used. This also includes some naming and layout conventions for XML elements and attributes.
+
+3. Specific definitions for various computer languages and environments as to how structured XML / XmAbbr data is to be both interpreted and generated. Of these JavaScript is the main target and XmAbbr is able to fulfil the same functions as JSON (eg: direct import and export of JavaScript objects). Data in the JSON format can be converted to the XML / XmAbbr format and converted back again without loss of information.
+
+## 2. Representing XML format data in XmAbbr
+
+The two types of content in XmAbbr (as with XML) are mark up and data. Mark up is contained in markup tags or the use of quoted text and is identified by four markup character definitions. These are a space or non printinable character, “:”, ‘”’ (Double Quote) and “’” (Single Quote or Apostrophe). These have a meaning analogous to the use of “<”, “>”, ‘”’ and “’” in XML. A markup tag is a sequence of characters enclosed by a leading white space character and a trailing “:”.  Quoted text is a sequence of characters enclosed within matched ‘”’ or “’” characters. 
+
+The basic form of a markup tag is one or more optional control characters followed by a property name (optional). The essential control symbols used are “-” to indicate down one level and “+” (one or more) to indicate up one or more levels. The following example is of data for an element called peopleList containing elements called name which in turn contains elements named title, first, middle, last, suffix and gender.
+
+PeopleList:
+        -name: -title:  Mr     first: John     middle: Albert    last: Doe  suffix: JNR     gender: Male
+        +name: -title: Ms     first: Edith    middle: Jane Louise    last: Pargetter       gender: Female
+
+<details>
+<summary>### 2.1 Summary of markup notation </summary>
+
+Before processing any XmAbbr input data is normalised to Unicode NFC (Normalisation Form Canonical Composition). This is however applied before any numeric character references are decoded. Any space or non-printable character is treated as a word or token delimiter
+
+#### 2.1.1 Property Name rules
+
+Property names are either standard names or quoted text (QuotedText). A standard name follows the form common in most computer languages of variable names starting with a visible character which is not a symbol or ASCII decimal digit (0–9) with digits allowed for following characters. In addition the underline (“_”) character is allowed as both a starting and following character while  hyphen minus (“-”) can be a following character. Within XML the additional characters of “:” and “.” are allowed within property names but are used for specific purposes (such as namespaces) and are not allowed in XmAbbr standard names.
+ 
+<details>
+<summary> EBNF definition </summary>
+
+NonPrintingChar ::=  #x20 |[#x00-#x19] #x7F-#x9F| [#x2000-#x200A] |#x2028 | #x2029 | #x202F | #x205F | #x3000 
+SeparatorSpace ::= ( NonPrintingChar )+
+
+SingleQuotedText ::= "'" ( [^'] | "''" )* "'"
+DoubleQuotedText ::= '"' ( [^"] | '""' )* '"'
+QuotedText ::= SingleQuotedText | DoubleQuotedText
+
+TokenisedText ::= 
+
+
+
+NameStartChar ::= ":" | [A-Z] | "_" | [a-z] | [#xC0-#xD6] | [#xD8-#xF6] | [#xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]
+NameChar ::= NameStartChar | "-" | "." | [0-9] | #xB7 | [#x0300-#x036F] | [#x203F-#x2040]
+Name ::= NameStartChar ( NameChar )*
+Names ::= Name ( #x20 Name )*
+Nmtoken ::= ( NameChar )+
+Nmtokens ::= Nmtoken ( #x20 Nmtoken )*
+</details>
+
+</details>
+<details>
+<summary>### 2.1 Rules for property names and detailed markup tag format </summary>
+
+Insert text here
+
+</details>
+<details>
+<summary>### 2.3 Extended markup tag control symbols definition and usage </summary>
+
+Insert text here
+
+</details>
+<details>
+<summary>### 2.4 Text formats and options </summary>
+
+Insert text here
+
+</details>
+
+## 3. Representing data structures and data types XML format data in XmAbbr
+
