@@ -37,7 +37,11 @@ Conversion to XML
 
 ${\color{blue}ᐸpeopleList}$  <br>
           ${\color{blue}ᐳᐸname}$  <br>
-                    ${\color{blue}ᐳᐸtitleᐳ \color{red}Mr \color{blue}ᐸ/titleᐳᐸfirstNameᐳ \color{red}John \color{blue} ᐸ/firstName}$ <br>                                                                                                                  
+                    ${\color{blue}ᐳᐸtitleᐳ \color{red}Mr \color{blue}ᐸ/titleᐳᐸfirstNameᐳ \color{red}John \color{blue} ᐸ/firstNameᐳᐸmiddleNameᐳ \color{red}Albert  \color{blue} ᐸ/middleName}$  <br>
+                    ${\color{blue}ᐳᐸlastNameᐳ \color{red}Doe \color{blue}ᐸ/lastNameᐳᐸgenderᐳ \color{red}Male ᐸgender}$  <br>           
+          ${\color{blue}ᐳᐸname}$  <br>                    
+                    ${\color{blue}ᐳᐸtitleᐳ \color{red}Ms \color{blue}ᐸ/titleᐳᐸfirstNameᐳ \color{red}Edith \color{blue} ᐸ/firstNameᐳᐸmiddleNameᐳ \color{red}Jane Lousie  \color{blue} ᐸ/middleName}$  <br>
+                    ${\color{blue}ᐳᐸlastNameᐳ \color{red}Pargetter \color{blue}ᐸ/lastNameᐳᐸgenderᐳ \color{red}Female ᐸ/genderᐳ}$  <br>                                                                                                                                      
         
 ### 1.1 Summary of markup notation 
 <details>
