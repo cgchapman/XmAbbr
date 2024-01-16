@@ -27,17 +27,17 @@ The two types of content in XmAbbr (as with XML) are mark up and data. Mark up i
 The basic form of a markup tag is one or more optional control characters followed by a property name (optional). The essential control symbols used are “-” to indicate down one level and “+” (one or more) to indicate up one or more levels. The following example is of data for an element called peopleList containing elements called name which in turn contains elements named title, firstName, middlename, lastName, suffix and gender.
 
 ${\color{blue}peopleList:}$  <br>
-          ${\color{blue}-name:}$  <br>
-                    ${\color{blue}-title: \space \color{red}Mr \space \space \space \space \color{blue}firstName: \space \color{red}John \space \space \space \space \space \space \color{blue}middleName: \space \color{red}Albert\space \space \space  \space \color{blue}lastName: \space \color{red}Doe \space \space \space \space \space \color{blue}gender: \space \color{red}Male}$  <br>
-          ${\color{blue}+name:}$  <br>
+          ${\color{blue}\-name:}$  <br>
+                    ${\color{blue}\-title: \space \color{red}Mr \space \space \space \space \color{blue}firstName: \space \color{red}John \space \space \space \space \space \space \color{blue}middleName: \space \color{red}Albert\space \space \space  \space \color{blue}lastName: \space \color{red}Doe \space \space \space \space \space \color{blue}gender: \space \color{red}Male}$  <br>
+          ${\color{blue}\+name:}$  <br>
                     ${\color{blue}-title: \space \color{red}Ms \space \space \space \space \color{blue}firstName: \space \color{red}Edith \space \space \space \space \space \color{blue}middleName: \space \color{red}Jane Lousie \space \space \space  \space \color{blue}lastName: \space \color{red}Pargetter \space \space \space \space \space \color{blue}gender: \space \color{red}Female}$  <br>
 <br>
 *(Markup tags are shown in blue and data in red)* <br>
 Conversion to XML
 
-${\color{blue}&lt;peopleList}$  <br>
-          ${\color{blue}&gt;&lt;name}$  <br>
-                    ${\color{blue}&gt;&lt;title&gt; \color{red}Mr \color{blue}&lt;/title&gt;&lt;firstName> \color{red}John \color{blue} &lt;/firstName}$ <br>                                                                                                                  
+${\color{blue}\<peopleList}$  <br>
+          ${\color{blue}\>\<name}$  <br>
+                    ${\color{blue}\>\<title\> \color{red}Mr \color{blue}\</title\>\<firstName> \color{red}John \color{blue} \></firstName}$ <br>                                                                                                                  
         
 ### 1.1 Summary of markup notation 
 <details>
