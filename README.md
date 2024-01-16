@@ -1,6 +1,6 @@
 # **XmAbbr (XML Abbreviated)**
 
-## 1. Introduction
+## Introduction
 
 XmAbbr is a lightweight abbreviated alternative serialisation language for XML (version 1.1) formatted data and can represent any standalone XML file. In addition the language specifies a computer language independent XML representation of structured typed data together with a series of mapping conventions for use with specific computer languages and applications.
 
@@ -20,23 +20,29 @@ XmAbbr has three distinct constituent parts:
 
 3. Specific definitions for various computer languages and environments as to how structured XML / XmAbbr data is to be both interpreted and generated. Of these JavaScript is the main target and XmAbbr is able to fulfil the same functions as JSON (eg: direct import and export of JavaScript objects). Data in the JSON format can be converted to the XML / XmAbbr format and converted back again without loss of information.
 
-## 2. Representing XML format data in XmAbbr
+## 1. Representing XML format data in XmAbbr
 
 The two types of content in XmAbbr (as with XML) are mark up and data. Mark up is contained in markup tags or the use of quoted text and is identified by four markup character definitions. These are a space or non printinable character, “:”, ‘”’ (Double Quote) and “’” (Single Quote or Apostrophe). These have a meaning analogous to the use of “<”, “>”, ‘”’ and “’” in XML. A markup tag is a sequence of characters enclosed by a leading white space character and a trailing “:”.  Quoted text is a sequence of characters enclosed within matched ‘”’ or “’” characters. 
 
 The basic form of a markup tag is one or more optional control characters followed by a property name (optional). The essential control symbols used are “-” to indicate down one level and “+” (one or more) to indicate up one or more levels. The following example is of data for an element called peopleList containing elements called name which in turn contains elements named title, first, middle, last, suffix and gender.
 
-PeopleList:
-        -name: -title:  Mr     first: John     middle: Albert    last: Doe  suffix: JNR     gender: Male
+$${\color{blue}peopleList: }$$ <BR>
+        $${\color{blue}-name:  }$$ <BR>
+                $${\color{blue}title: \space \color{red}Mr}$$ 
+                $${\color{blue}first: \space \color{red}John}$$ 
+                $${\color{blue}middle: \space \color{Albert}Mr}$$ 
+                $${\color{blue}last: \space \color{Doe}Mr}$$ 
+                $${\color{blue}gender: \space \color{red}Male}$$ <BR>
+        
         +name: -title: Ms     first: Edith    middle: Jane Louise    last: Pargetter       gender: Female
 
-### 2.1 Summary of markup notation 
+### 1.1 Summary of markup notation 
 <details>
 <summary>   Details </summary>
 
 Before processing any XmAbbr input data is normalised to Unicode NFC (Normalisation Form Canonical Composition). This is however applied before any numeric character references are decoded. Any space or non-printable character is treated as a word or token delimiter
 
-#### 2.1.1 Property Name rules
+#### 1.1.1 Property Name rules
 
 Property names are either standard names or quoted text (QuotedText). A standard name follows the form common in most computer languages of variable names starting with a visible character which is not a symbol or ASCII decimal digit (0–9) with digits allowed for following characters. In addition the underline (“_”) character is allowed as both a starting and following character while  hyphen minus (“-”) can be a following character. Within XML the additional characters of “:” and “.” are allowed within property names but are used for specific purposes (such as namespaces) and are not allowed in XmAbbr standard names.
  
@@ -44,14 +50,15 @@ Property names are either standard names or quoted text (QuotedText). A standard
 <summary> EBNF definition </summary>
 
 NonPrintingChar ::=  #x20 |[#x00-#x19] #x7F-#x9F| [#x2000-#x200A] |#x2028 | #x2029 | #x202F | #x205F | #x3000 
-SeparatorSpace ::= ( NonPrintingChar )+
+SeparatorSpaces ::= ( NonPrintingChar )+
 
 SingleQuotedText ::= "'" ( [^'] | "''" )* "'"
 DoubleQuotedText ::= '"' ( [^"] | '""' )* '"'
 QuotedText ::= SingleQuotedText | DoubleQuotedText
 
-TokenisedText ::= 
 
+TokenisedString ::= SeparatorSpaces 
+TokenisedText ::= SeparatorSpaces 
 
 
 NameStartChar ::= ":" | [A-Z] | "_" | [a-z] | [#xC0-#xD6] | [#xD8-#xF6] | [#xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]
@@ -64,7 +71,7 @@ Nmtokens ::= Nmtoken ( #x20 Nmtoken )*
 
 </details>
 
-### 2.1 Rules for property names and detailed markup tag format 
+### 1.1 Rules for property names and detailed markup tag format 
 <details>
 <summary>   Details </summary>
 
@@ -72,7 +79,7 @@ Insert text here
 
 </details>
 
-### 2.3 Extended markup tag control symbols definition and usage
+### 1.3 Extended markup tag control symbols definition and usage
  
 <details>
 <summary>   Details </summary>
@@ -81,13 +88,19 @@ Insert text here
 
 </details>
 
-### 2.4 Text formats and options 
+### 1.4 Text formats and options 
 <details>
 <summary>   Details </summary>
 
 Insert text here
 
 </details>
+### 1.5 Examples 
+<details>
+<summary>   Details </summary>
 
-## 3. Representing data structures and data types XML format data in XmAbbr
+Insert text here
+
+</details>
+## 2. Representing data structures and data types in XmAbbr and XML format data
 
