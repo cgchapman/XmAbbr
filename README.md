@@ -84,7 +84,7 @@ Nmtokens ::= Nmtoken ( #x20 Nmtoken )*
 <details>
 <summary>   Details </summary>
 
-Insert text here
+Insert description of proprty name rules
 
 </details>
 
