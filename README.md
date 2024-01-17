@@ -33,21 +33,23 @@ ${\color{blue}peopleList:}$  <br>
                     ${\color{blue}-title: \space \color{red}Ms \space \space \space \space \color{blue}firstName: \space \color{red}Edith \space \space \space \space \space \color{blue}middleName: \space \color{red}Jane Lousie \space \space \space  \space \color{blue}lastName: \space \color{red}Pargetter \space \space \space \space \space \color{blue}gender: \space \color{red}Female}$  <br>
 <br>
 *(Markup tags are shown in blue and data in red)* <br>
-Conversion to XML
+<details>
+<summary> Conversion to XML </summary>
 
 ${\color{blue}ᐸpeopleList}$  <br>
           ${\color{blue}ᐳᐸname}$  <br>
-                    ${\color{blue}ᐳᐸtitleᐳ \color{red}Mr \color{blue}ᐸ/titleᐳᐸfirstNameᐳ \color{red}John \color{blue} ᐸ/firstNameᐳᐸmiddleNameᐳ \color{red}Albert  \color{blue} ᐸ/middleName}$  <br>
-                    ${\color{blue}ᐳᐸlastNameᐳ \color{red}Doe \color{blue}ᐸ/lastNameᐳᐸgenderᐳ \color{red}Male ᐸgender}$  <br>           
-          ${\color{blue}ᐳᐸname}$  <br>                    
-                    ${\color{blue}ᐳᐸtitleᐳ \color{red}Ms \color{blue}ᐸ/titleᐳᐸfirstNameᐳ \color{red}Edith \color{blue} ᐸ/firstNameᐳᐸmiddleNameᐳ \color{red}Jane Lousie  \color{blue} ᐸ/middleName}$  <br>
-                    ${\color{blue}ᐳᐸlastNameᐳ \color{red}Pargetter \color{blue}ᐸ/lastNameᐳᐸgenderᐳ \color{red}Female ᐸ/genderᐳ}$  <br>                                                                                                                                      
-        
+                    ${\color{blue}ᐳᐸtitleᐳ \color{red}Mr \color{blue}ᐸ/titleᐳᐸfirstNameᐳ \color{red}John \color{blue} ᐸ/firstNameᐳᐸmiddleNameᐳ \color{red}Albert \color{blue} ᐸ/middleName}$  <br>
+                    ${\color{blue}ᐳᐸlastNameᐳ \color{red}Doe \color{blue}ᐸ/lastNameᐳᐸgenderᐳ \color{red}Male \color{blue} ᐸgender}$  <br>
+          ${\color{blue}ᐳᐸname}$  <br>
+          ${\color{blue}ᐳᐸtitleᐳ \color{red}Ms \color{blue}ᐸ/titleᐳᐸfirstNameᐳ \color{red}Edith \color{blue} ᐸ/firstNameᐳᐸmiddleNameᐳ \color{red}Jane Lousie  \color{blue} ᐸ/middleName}$  <br>
+                    ${\color{blue}ᐳᐸlastNameᐳ \color{red}Pargetter \color{blue}ᐸ/lastNameᐳᐸgenderᐳ \color{red}Female \color{blue} ᐸ/genderᐳ}$  <br>
+</details>
+ 
 ### 1.1 Summary of markup notation 
 <details>
 <summary>   Details </summary>
 
-Before processing any XmAbbr input data is normalised to Unicode NFC (Normalisation Form Canonical Composition). This is however applied before any numeric character references are decoded. Any space or non-printable character is treated as a word or token delimiter
+Before processing any XmAbbr input data is normalised to Unicode NFC (Normalisation Form Canonical Composition). This is however applied before any numeric character references are decoded. Any space or non-printable character is treated as a word or token delimiter.
 
 #### 1.1.1 Property Name rules
 
