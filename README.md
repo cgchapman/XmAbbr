@@ -29,9 +29,9 @@ A markup tag is a sequence of characters enclosed by a leading white space chara
 The basic form of a markup tag is one or more optional control characters followed by a property name. The primary control symbols used are “-” to indicate down one level and “+” (one or more) to indicate up one or more levels. The following example is of data for an element called peopleList containing elements called name which in turn contains elements named title, firstName, middlename, lastName, suffix and gender.
 
 ${\color{blue}peopleList:}$  <br>
-         ${\color{blue}\− name:}$  <br>
-                 ${\color{blue}\− title: \space \color{red}Mr \space \space \space \space \color{blue}firstName: \space \color{red}John \space \space \space \space \space \space \color{blue}middleName: \space \color{red}Albert\space \space \space  \space \color{blue}lastName: \space \color{red}Doe \space \space \space \space \space \color{blue}gender: \space \color{red}Male}$  <br>
-         ${\color{blue}\+name:}$  <br>
+         ${\color{blue}− name:}$  <br>
+                 ${\color{blue}− title: \space \color{red}Mr \space \space \space \space \color{blue}firstName: \space \color{red}John \space \space \space \space \space \space \color{blue}middleName: \space \color{red}Albert\space \space \space  \space \color{blue}lastName: \space \color{red}Doe \space \space \space \space \space \color{blue}gender: \space \color{red}Male}$  <br>
+         ${\color{blue}+name:}$  <br>
                  ${\color{blue}− title: \space \color{red}Ms \space \space \space \space \color{blue}firstName: \space \color{red}Edith \space \space \space \space \space \color{blue}middleName: \space \color{red}Jane Lousie \space \space \space  \space \color{blue}lastName: \space \color{red}Pargetter \space \space \space \space \space \color{blue}gender: \space \color{red}Female}$  <br>
 <br>
 *(Markup tags are shown in blue and data in red)* <br>
@@ -101,29 +101,29 @@ Refer to [Extensible Markup Language (XML) 1.1 – Notation ](https://www.w3.org
 </details>
 
 
-SingleQuotedText ::=  [‘] ( [^'] | ( [‘] [‘] ) ) * [‘]<br>
-DoubleQuotedText ::=  [“] ( [^”] | ( [“] [“] ) ) * [“]<br>
-QuotedText ::=  SingleQuotedText | DoubleQuotedText<br>
-NonPrintingChar ::=  [#x00-#x20] | #x7F-#xA0 | [#x2000-#x200A] |#x2028 | #x2029 | #x202F | #x205F | #x3000 <br>
-WhiteSpace ::= NonPrintingChar +<br>
-PrintingChar ::= [#x21-#x7E] | [#xA1-#x1FFF] | [#x200B-#x2027] | [#x202A-#x202E] | [#x2030-#x205E] | [#x2060-#x2FFF] | [#x3001-#x10FFFF]<br>
-TokenChar ::= PrintingChar - [:‘“] <br>
-TokenText ::= TokenChar +<br>
-DecDigit ::= [0-9]<br>
-HexDigit ::= [0-9a-fA-F]<br>
-HexCharRef ::= “#” ? [xX] HexDigit HexDigit ?  HexDigit ? HexDigit ? HexDigit ? HexDigit ?<br>
-DecCharRef ::= “#” ? DecDigit DecDigit ? DecDigit ? DecDigit ? DecDigit ? DecDigit ? DecDigit ?<br>
-NumCharRef ::=   HexCharRef | DecCharRef<br>
-InterQuoteToken ::=  TokenText - NumCharRef<br>
-QuotedTokenOrRefs ::= QuotedText ( ( NumCharRef | InterQuoteToken ) QuotedText ) + <br>
-Text ::= WhiteSpace? ( ( TokenText |  QuotedTokenOrRefs | QuotedText ) WhiteSpace ) +<br>
+ **SingleQuotedText** ::=  [‘] ( [^'] | ( [‘] [‘] ) ) * [‘]<br>
+ **DoubleQuotedText** ::=  [“] ( [^”] | ( [“] [“] ) ) * [“]<br>
+ **QuotedText** ::=  SingleQuotedText | DoubleQuotedText<br>
+ **NonPrintingChar** ::=  [#x00-#x20] | #x7F-#xA0 | [#x2000-#x200A] |#x2028 | #x2029 | #x202F | #x205F | #x3000 <br>
+ **WhiteSpace** ::= NonPrintingChar +<br>
+ **PrintingChar** ::= [#x21-#x7E] | [#xA1-#x1FFF] | [#x200B-#x2027] | [#x202A-#x202E] | [#x2030-#x205E] | [#x2060-#x2FFF] | [#x3001-#x10FFFF]<br>
+ **TokenChar** ::= PrintingChar - [:‘“] <br>
+ **TokenText** ::= TokenChar +<br>
+ **DecDigit** ::= [0-9]<br>
+ **HexDigit** ::= [0-9a-fA-F]<br>
+ **HexCharRef** ::= “#” ? [xX] HexDigit HexDigit ?  HexDigit ? HexDigit ? HexDigit ? HexDigit ?<br>
+ **DecCharRef** ::= “#” ? DecDigit DecDigit ? DecDigit ? DecDigit ? DecDigit ? DecDigit ? DecDigit ?<br>
+ **NumCharRef** ::=   HexCharRef | DecCharRef<br>
+ **InterQuoteToken** ::=  TokenText - NumCharRef<br>
+ **QuotedTokenOrRefs** ::= QuotedText ( ( NumCharRef | InterQuoteToken ) QuotedText ) + <br>
+ **Text** ::= WhiteSpace? ( ( TokenText |  QuotedTokenOrRefs | QuotedText ) WhiteSpace ) +<br>
 
 
 
 
-NameStartChar ::=  | [A-Z] | "_" | [a-z] | [#xC0-#xD6] | [#xD8-#xF6] | [#xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]<br>
-NameChar ::= NameStartChar | "-" | [0-9] | #xB7 | [#x0300-#x036F] | [#x203F-#x2040]<br>
-Name ::= NameStartChar ( NameChar ) *<br>
+ **NameStartChar** ::=  | [A-Z] | "_" | [a-z] | [#xC0-#xD6] | [#xD8-#xF6] | [#xF8-#x2FF] | [#x370-#x37D] | [#x37F-#x1FFF] | [#x200C-#x200D] | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] | [#xF900-#xFDCF] | [#xFDF0-#xFFFD] | [#x10000-#xEFFFF]<br>
+ **NameChar** ::= NameStartChar | "-" | [0-9] | #xB7 | [#x0300-#x036F] | [#x203F-#x2040]<br>
+ **Name** ::= NameStartChar ( NameChar ) *<br>
 Names ::= Name ( #x20 Name )*
 Nmtoken ::= ( NameChar )+
 Nmtokens ::= Nmtoken ( #x20 Nmtoken )*
@@ -312,7 +312,6 @@ Insert text here
                 **ᐸ/PmtInfᐳ** <br>
         **ᐸ/CstmrDrctDbtInitnᐳ** <br>
 **ᐸ/Documentᐳ** <br>
-
 
 </details>
 ## 2. Representing data structures and data types in XmAbbr and XML format data
