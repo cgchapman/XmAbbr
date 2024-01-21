@@ -31,8 +31,8 @@ The basic form of a markup tag is one or more optional control characters follow
 ${\color{blue}peopleList:}$  <br>
          ${\color{blue}− name:}$  <br>
                  ${\color{blue}− title: \space \color{red}Mr \space \space \space \space \color{blue}firstName: \space \color{red}John \space \space \space \space \space \space \color{blue}middleName: \space \color{red}Albert\space \space \space  \space \color{blue}lastName: \space \color{red}Doe \space \space \space \space \space \color{blue}gender: \space \color{red}Male}$  <br>
-         ${\color{blue}+name:}$  <br>
-                 ${\color{blue}− title: \space \color{red}Ms \space \space \space \space \color{blue}firstName: \space \color{red}Edith \space \space \space \space \space \color{blue}middleName: \space \color{red}Jane Lousie \space \space \space  \space \color{blue}lastName: \space \color{red}Pargetter \space \space \space \space \space \color{blue}gender: \space \color{red}Female}$  <br>
+         ${\color{blue}＋name:}$  <br>
+                 ${\color{blue}−title: \space \color{red}Ms \space \space \space \space \color{blue}firstName: \space \color{red}Edith \space \space \space \space \space \color{blue}middleName: \space \color{red}Jane Lousie \space \space \space  \space \color{blue}lastName: \space \color{red}Pargetter \space \space \space \space \space \color{blue}gender: \space \color{red}Female}$  <br>
 <br>
 *(Markup tags are shown in blue and data in red)* <br>
 <details>
@@ -42,7 +42,7 @@ ${\color{blue}ᐸpeopleList}$  <br>
          ${\color{blue}ᐳᐸname}$  <br>
                  ${\color{blue}ᐳᐸtitleᐳ \color{red}Mr \color{blue}ᐸ/titleᐳᐸfirstNameᐳ \color{red}John \color{blue} ᐸ/firstNameᐳᐸmiddleNameᐳ \color{red}Albert \color{blue} ᐸ/middleName}$  <br>
                  ${\color{blue}ᐳᐸlastNameᐳ \color{red}Doe \color{blue}ᐸ/lastNameᐳᐸgenderᐳ \color{red}Male \color{blue} ᐸ/gender}$  <br>
-         ${\color{blue}ᐳᐸname}$  <br>
+         ${\color{blue}ᐳᐸname }$  <br>
                  ${\color{blue}ᐳᐸtitleᐳ \color{red}Ms \color{blue}ᐸ/titleᐳᐸfirstNameᐳ \color{red}Edith \color{blue} ᐸ/firstNameᐳᐸmiddleNameᐳ \color{red}Jane Lousie  \color{blue} ᐸ/middleName}$  <br>
                  ${\color{blue}ᐳᐸlastNameᐳ \color{red}Pargetter \color{blue}ᐸ/lastNameᐳᐸgenderᐳ \color{red}Female \color{blue} ᐸ/genderᐳ}$  <br>
 </details>
