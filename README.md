@@ -26,25 +26,25 @@ The two types of content in XmAbbr (as with XML) are mark up and data. Mark up i
 
 A markup tag is a sequence of characters enclosed by a leading white space character and a trailing “:”.  Quoted text is a sequence of characters enclosed within matched ‘”’ or “’” characters with the enclosing quote character represented within this by being repeated. This format is very familiar to those who use applications such as CSV files and spreadsheet formulas etc.
 
-The basic form of a markup tag is one or more optional control characters followed by a property name. The primary control symbols used are “-” to indicate down one level and “+” (one or more) to indicate up one or more levels. The following example is of data for an element called peopleList containing elements called name which in turn contains elements named Honorific, firstName, middlename, lastName, suffix and gender.
+The basic form of a markup tag is one or more optional control characters followed by a property name. The primary control symbols used are “-” to indicate down one level and “+” (one or more) to indicate up one or more levels. The following example is of data for an element called peopleList containing elements called name which in turn contains elements named title, firstName, middlename, lastName, suffix and gender.
 
 ${\color{blue}peopleList:}$  <br>
-         ${\color{blue}− name: \space }$  <br>
-                  {\color{blue}−Honorific: \space \color{red}Mr \space \space \space \space \color{blue}firstName: \space \color{red}John \space \space \space \space \space \space \color{blue}middleName: \space \color{red}Albert\space \space \space  \space \color{blue}lastName: \space \color{red}Doe \space \space \space \space \space \color{blue}gender: \space \color{red}Male}$  <br>
-         ${\color{blue}＋name:  \space }$  <br>
-                  ${\color{blue}−Honorific: \space \color{red}Ms \space \space \space \space \color{blue}firstName: \space \color{red}Edith \space \space \space \space \space \color{blue}middleName: \space \color{red}Jane Lousie \space \space \space  \space \color{blue}lastName: \space \color{red}Pargetter \space \space \space \space \space \color{blue}gender: \space \color{red}Female}$  <br>
-                  <br>
+         ${\color{blue}−name:}$  <br>
+                 ${\color{blue}−title: \space \color{red}Mr \space \space \space \space \color{blue}firstName: \space \color{red}John \space \space \space \space \space \space \color{blue}middleName: \space \color{red}Albert \space \space \space  \space \color{blue}lastName: \space \color{red}Doe \space \space \space \space \space \color{blue}gender: \space \color{red}Male }$  <br>
+         ${\color{blue}+name:}$  <br>
+                 ${\color{blue}−title: \space \color{red}Ms \space \space \space \space \color{blue}firstName: \space \color{red}Edith \space \space \space \space \space \color{blue}middleName: \space \color{red}Jane Lousie \space \space \space  \space \color{blue}lastName: \space \color{red}Pargetter \space \space \space \space \space \color{blue}gender: \space \color{red}Female }$  <br>
+<br>
 *(Markup tags are shown in blue and data in red)* <br>
 <details>
 <summary> Expand for Conversion to XML </summary>
 
-${\color{blue}ᐸpeopleList}$  <br>
-         ${\color{blue}ᐳᐸname}$  <br>
-                  ${\color{blue}ᐳᐸHonorificᐳ \color{red}Mr \color{blue}ᐸ/HonorificᐳᐸfirstNameᐳ \color{red}John \color{blue} ᐸ/firstNameᐳᐸmiddleNameᐳ \color{red}Albert \color{blue} ᐸ/middleName}$  <br>
-                  ${\color{blue}ᐳᐸlastNameᐳ \color{red}Doe \color{blue}ᐸ/lastNameᐳᐸgenderᐳ \color{red}Male \color{blue} ᐸ/gender}$  <br>
+${\color{blue}ᐸpeopleList }$  <br>
          ${\color{blue}ᐳᐸname }$  <br>
-                  ${\color{blue}ᐳᐸHonorificᐳ \color{red}Ms \color{blue}ᐸ/HonorificᐳᐸfirstNameᐳ \color{red}Edith \color{blue} ᐸ/firstNameᐳᐸmiddleNameᐳ \color{red}Jane Lousie  \color{blue} ᐸ/middleName}$  <br>
-                 ${\color{blue}ᐳᐸlastNameᐳ \color{red}Pargetter \color{blue}ᐸ/lastNameᐳᐸgenderᐳ \color{red}Female \color{blue} ᐸ/genderᐳ}$  <br>
+                 ${\color{blue}ᐳᐸtitleᐳ \color{red}Mr \color{blue}ᐸ/titleᐳᐸfirstNameᐳ \color{red}John \color{blue}ᐸ/firstNameᐳᐸmiddleNameᐳ \color{red}Albert \color{blue}ᐸ/middleName }$  <br>
+                 ${\color{blue}ᐳᐸlastNameᐳ \color{red}Doe \color{blue}ᐸ/lastNameᐳᐸgenderᐳ \color{red}Male \color{blue}ᐸ/gender }$  <br>
+         ${\color{blue}ᐳᐸname }$  <br>
+                 ${\color{blue}ᐳᐸtitleᐳ \color{red}Ms \color{blue}ᐸ/titleᐳᐸfirstNameᐳ \color{red}Edith \color{blue} ᐸ/firstNameᐳᐸmiddleNameᐳ \color{red}Jane Lousie  \color{blue}ᐸ/middleName }$  <br>
+                 ${\color{blue}ᐳᐸlastNameᐳ \color{red}Pargetter \color{blue}ᐸ/lastNameᐳᐸgenderᐳ \color{red}Female \color{blue}ᐸ/genderᐳ }$  <br>
 </details>
 
 
@@ -312,6 +312,7 @@ Insert text here
                 **ᐸ/PmtInfᐳ** <br>
         **ᐸ/CstmrDrctDbtInitnᐳ** <br>
 **ᐸ/Documentᐳ** <br>
+
 
 </details>
 ## 2. Representing data structures and data types in XmAbbr and XML format data
