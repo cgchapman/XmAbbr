@@ -155,7 +155,9 @@ Insert text here
 Insert text here
 
 </details>
+
 ### 1.5 Examples 
+
 <details>
 <summary>   Details </summary>
 
@@ -315,5 +317,6 @@ Insert text here
 
 
 </details>
+
 ## 2. Representing data structures and data types in XmAbbr and XML format data
 
