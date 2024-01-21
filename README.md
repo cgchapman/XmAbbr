@@ -29,10 +29,11 @@ A markup tag is a sequence of characters enclosed by a leading white space chara
 The basic form of a markup tag is one or more optional control characters followed by a property name. The primary control symbols used are “-” to indicate down one level and “+” (one or more) to indicate up one or more levels. The following example is of data for an element called peopleList containing elements called name which in turn contains elements named title, firstName, middlename, lastName, suffix and gender.
 
 ${\color{blue}peopleList:}$  <br>
-         ${\color{blue}− name:}$  <br>
+         ${\color{blue}− name: \space}$  <br>
                  ${\color{blue}− title: \space \color{red}Mr \space \space \space \space \color{blue}firstName: \space \color{red}John \space \space \space \space \space \space \color{blue}middleName: \space \color{red}Albert\space \space \space  \space \color{blue}lastName: \space \color{red}Doe \space \space \space \space \space \color{blue}gender: \space \color{red}Male}$  <br>
-         ${\color{blue}＋name:  }$  <br>
+         ${\color{blue}＋name:  \space }$  <br>
                  ${\color{blue}−title: \space \color{red}Ms \space \space \space \space \color{blue}firstName: \space \color{red}Edith \space \space \space \space \space \color{blue}middleName: \space \color{red}Jane Lousie \space \space \space  \space \color{blue}lastName: \space \color{red}Pargetter \space \space \space \space \space \color{blue}gender: \space \color{red}Female}$  <br>
+                 ${\color{blue}− }$
 <br>
 *(Markup tags are shown in blue and data in red)* <br>
 <details>
